@@ -23,7 +23,7 @@ function BookAppointment() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/doctor/get-doctor-info-by-id",
+        `${process.env.REACT_APP_BASE_URL}/api/doctor/get-doctor-info-by-id`,
         {
           doctorId: params.doctorId,
         },
@@ -46,7 +46,7 @@ function BookAppointment() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/user/book-appointment",
+        `${process.env.REACT_APP_BASE_URL}/api/user/book-appointment`,
         {
           doctorId: params.doctorId,
           userId: user._id,
@@ -76,7 +76,7 @@ function BookAppointment() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/user/check-booking-availability",
+        `${process.env.REACT_APP_BASE_URL}/api/user/check-booking-availability`,
         {
           doctorId: params.doctorId,
           date: date,

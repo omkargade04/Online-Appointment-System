@@ -15,7 +15,7 @@ function DoctorsList() {
     const getDoctorsData = async() => {
         try{
             dispatch(showLoading())
-            const response = await axios.get('http://localhost:5000/api/admin/get-all-doctors',{
+            const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/admin/get-all-doctors`,{
                 headers:{
                     Authorization : `Bearer ${localStorage.getItem('token')}`,
                 }
@@ -32,7 +32,7 @@ function DoctorsList() {
     const changeDoctorStatus = async(record, status) => {
         try{
             dispatch(showLoading())
-            const response = await axios.post('http://localhost:5000/api/admin/change-doctor-account-status',{doctorId: record._id, userId: record.userId, status: status},{
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/admin/change-doctor-account-status`,{doctorId: record._id, userId: record.userId, status: status},{
                 headers:{
                     Authorization : `Bearer ${localStorage.getItem('token')}`,
                 }

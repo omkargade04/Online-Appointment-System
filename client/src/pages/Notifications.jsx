@@ -16,7 +16,7 @@ function Notifications() {
     const markAllAsSeen = async()=>{
         try{
             dispatch(showLoading());
-            const response = await axios.post('http://localhost:5000/api/user/mark-all-notifications-as-seen', {userId: user._id},{
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/user/mark-all-notifications-as-seen`, {userId: user._id},{
                 headers:{
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 }
@@ -36,7 +36,7 @@ function Notifications() {
     const deleteAll = async()=>{
         try{
             dispatch(showLoading());
-            const response = await axios.post('http://localhost:5000/api/user/delete-all-notifications', {userId: user._id},{
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/user/delete-all-notifications`, {userId: user._id},{
                 headers:{
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 }

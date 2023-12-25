@@ -14,7 +14,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const response = await axios.get(
-        "http://localhost:5000/api/doctor/get-appointments-by-doctor-id",
+        `${process.env.REACT_APP_BASE_URL}/api/doctor/get-appointments-by-doctor-id`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -34,7 +34,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/doctor/change-appointment-status",
+        `${process.env.REACT_APP_BASE_URL}/api/doctor/change-appointment-status`,
         { appointmentId : record._id, status: status},
         {
           headers: {

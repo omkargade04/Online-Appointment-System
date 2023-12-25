@@ -12,7 +12,7 @@ function Userslist() {
     const getUsersData = async() => {
         try{
             dispatch(showLoading())
-            const response = await axios.get('http://localhost:5000/api/admin/get-all-users',{
+            const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/admin/get-all-users`,{
                 headers:{
                     Authorization : `Bearer ${localStorage.getItem('token')}`,
                 }

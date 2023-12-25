@@ -17,7 +17,7 @@ function Profile() {
     const onFinish = async(values) => {
         try{
             dispatch(showLoading());
-            const response = await axios.post("http://localhost:5000/api/doctor/update-doctor-profile", {
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/doctor/update-doctor-profile`, {
                 ...values,
                 userId: user._id,
                 timings: [
