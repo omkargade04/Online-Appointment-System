@@ -1,0 +1,69 @@
+.main{
+    padding: 20px;
+}
+.sidebar{
+    background-color: rgb(115, 209, 115) !important;
+    border-radius: 5px;
+    box-shadow: 0 0 2px gray;
+    margin-right: 20px;
+    height: 20vh;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.logo{
+    font-weight: bold;
+}
+.content{
+    
+    width: 100%;
+    height: 100%;
+}
+.header{
+    background-color: white !important;
+    border-radius: 5px;
+    box-shadow: 0 0 2px gray;
+    margin-bottom: 20px;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.header-action-icon{
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    
+}
+.body{
+    background-color: white !important;
+    border-radius: 5px;
+    box-shadow: 0 0 2px gray;
+    height: 90vh;
+    width: 100%;
+    padding: 15px;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px ;
+}
+/* .menu-item{
+    ma
+} */
+.menu-item a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.menu-item i{
+    color: rgba(255, 255, 255, 0.906);
+    text-decoration: none;
+    font-size: 18px;
+}
+.active-menu-item{
+    color: white;
+    background-color: rgb(68, 194, 68);
+    padding: 5px;
+    border-radius: 5px;
+}
