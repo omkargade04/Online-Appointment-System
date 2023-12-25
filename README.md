@@ -32,8 +32,6 @@ $ nodemon server.js
   3) Doctors
 
 ## Flow of the Application
-- Firsly, you need to fork or clone the repository.
-- Second step is to connect the MongoDB database using your credentials.
 - You need to register as an Admin and log in into the application. Then you the user info has a role specifier called "isAdmin" which will we false initially but to be admin, you need to update it's status to true so that you can become the admin.
 - So as admin you will be directed to admin interface.
 - Moving on the application is going to need a doctor, so by registering and logging in to the app by a new user, the app has a section for "Apply Doctor" position. So you need to fill the doctor's information.
