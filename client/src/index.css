@@ -1,4 +1,8 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Andika:wght@700&family=Archivo+Black&family=Arvo&family=Bacasime+Antique&family=Crimson+Text:ital,wght@1,600&family=Lobster&family=Lobster+Two&family=Montserrat:wght@200;400&family=Roboto:ital,wght@0,100;1,100&family=Tiro+Devanagari+Hindi&display=swap');
 
 *{

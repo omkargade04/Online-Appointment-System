@@ -66,11 +66,6 @@ function Layout({children}) {
             path: '/admin/doctorslist',
             icon: "ri-hospital-line"
         },
-        {
-            name: "Profile",
-            path: "/profile",
-            icon: 'ri-user-line'
-        }
 
     ];
 
@@ -111,7 +106,7 @@ function Layout({children}) {
                 <div className="header">
                     <div className="d-flex align-items-center px-4">
 
-                    <Link className='anchor' to='/profile'>{user?.name}</Link>
+                    <Link className='anchor' to='/doctor/profile/:doctorId'>{user?.name}</Link>
 
                     <Badge count={user?.unseenNotifications.length} onClick = {() => navigate('/notifications')}>
                     <i className=" noti ri-notification-line header-action-icon px-3"></i>
