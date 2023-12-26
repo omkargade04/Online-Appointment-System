@@ -10,6 +10,7 @@
     padding: 10px;
     width: 100%;
     margin-bottom: 20px;
+    overflow-x: scroll !important;
 }
 .logo{
     font-weight: bold;
