@@ -66,9 +66,16 @@ function Notifications() {
                 {user?.unseenNotifications.map((notification) => (
                     <div className="card p-2 mt-2" onClick={() => navigate(notification.onClickPath)}>
                         <div className="card-text">
+                            {/* {()=>{if(user?.unseenNotifications.length == 0){
+                                <p>No notifications present</p>
+                            }else{
+                                {notification.message}
+                            }}} */}
                             {notification.message}
+                            
                         </div>
                     </div>
+                    
 
                 ))}
             </Tabs.TabPane>
