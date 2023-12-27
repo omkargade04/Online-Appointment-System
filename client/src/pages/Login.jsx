@@ -29,9 +29,13 @@ function Login() {
      };
 
   return (
-    <div className = "authentication">
+    <div className="login-page flex w-full ">
+        <div className="login-page-image bg-white flex justify-center items-center mt-20 object-cover ">
+            <img className='' src="https://img.freepik.com/premium-vector/personal-doctor-appointment-2d-vector-isolated-illustration-visit-professional-health-facility-flat-characters-cartoon-background-getting-treatment-plan-symptoms-conditions-colourful-scene_151150-5797.jpg?w=2000" alt="" />
+     </div>
+        <div className = "authentication bg-blue-400">
         <div className='authentication-form card p-3'>
-            <h1 className='card-title'>Welcome Back</h1>
+            <h1 className='card-title bg-blue-500'>Welcome Back</h1>
 
             <Form layout='vertical' onFinish={onFinish}>
 
@@ -43,12 +47,15 @@ function Login() {
                     <Input placeholder='Password' type='Password'/>
                 </Form.Item>
 
-                <Button className='primary-button my-3 full-width-button' htmlType='submit'> LOGIN</Button>
+                <Button className='bg-blue-500 primary-button my-3 full-width-button' htmlType='submit'> LOGIN</Button>
 
                 <Link to='/register' className='anchor mt-2'>Click here to register</Link>
             </Form>
         </div>
     </div>
+    
+    </div>
+    
   )
 }
 
