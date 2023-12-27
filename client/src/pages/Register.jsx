@@ -29,9 +29,13 @@ function Register() {
     };
 
   return (
-    <div className = "authentication">
+    <div className="login-page flex w-full">
+        <div className="login-page-image  bg-white flex justify-center items-center mt-20 object-cover">
+        <img className='' src="https://img.freepik.com/premium-vector/personal-doctor-appointment-2d-vector-isolated-illustration-visit-professional-health-facility-flat-characters-cartoon-background-getting-treatment-plan-symptoms-conditions-colourful-scene_151150-5797.jpg?w=2000" alt="" />
+        </div>
+        <div className = "authentication  bg-blue-400">
         <div className='authentication-form card p-3'>
-            <h1 className='card-title'>Welcome</h1>
+            <h1 className='card-title  bg-blue-500'>Welcome</h1>
 
             <Form layout='vertical' onFinish={onFinish}>
                 <Form.Item label='Name' name='name'>
@@ -52,6 +56,8 @@ function Register() {
             </Form>
         </div>
     </div>
+    </div>
+    
   )
 }
 

@@ -2,7 +2,7 @@
     padding: 20px;
 }
 .sidebar{
-    background-color: rgb(115, 209, 115) !important;
+    background-color: rgb(79, 151, 247) !important;
     border-radius: 5px;
     box-shadow: 0 0 2px gray;
     margin-right: 20px;
@@ -13,6 +13,7 @@
     overflow-x: scroll !important;
 }
 .logo{
+    font-size: 30px;
     font-weight: bold;
 }
 .content{
@@ -65,7 +66,8 @@
 }
 .active-menu-item{
     color: white;
-    background-color: rgb(68, 194, 68);
+    background-color: rgb(26, 120, 243) !important;
+    border-color: rgb(29, 85, 237);
     padding: 5px;
     border-radius: 5px;
 }
