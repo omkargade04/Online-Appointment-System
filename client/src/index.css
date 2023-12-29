@@ -104,7 +104,7 @@ p{
 /* authentication pages */
 .authentication{
     height: 100vh;
-    width: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,4 +134,53 @@ p{
     padding: 7px 15px;
     margin-left: -40px;
     border-bottom-left-radius: 10px ;
+}
+/* responsive */
+.header-action-icon{
+    display: flex;
+    justify-content: end;
+    font-size: 25px !important;
+    color: black !important;
+    padding-right: 10px !important;
+    cursor: pointer !important;
+}
+.collapsed-authentication{
+    display: none; 
+}
+.full-home{
+    width: 100%;
+}
+.full-home img{
+    display: flex;
+    justify-content: center;
+    height: 600px;
+}
+.full-authentication{
+    height: 100vh;
+    width: 40%;
+}
+.title{
+    padding-left: 60px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(44, 113, 243)
+}
+.card-description{
+    height: 500px;
+    width: 400px;
+
+}
+.collapsed-description{
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-evenly;
+}
+.nav{
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .full-home{
+        display: none;
+    }
 }

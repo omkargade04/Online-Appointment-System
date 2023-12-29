@@ -1,5 +1,5 @@
 import { Form, Input, Button } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { showLoading, hideLoading } from "../redux/alertsSlice";
 
 function Login() {
+  const [collapsed, setCollapsed] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const onFinish = async (values) => {
@@ -33,30 +34,81 @@ function Login() {
 
   return (
     <div className="login-page flex w-full ">
-        <div className="login-page-image bg-white flex justify-center items-center mt-20 object-cover ">
-            <img className='' src="https://img.freepik.com/premium-vector/personal-doctor-appointment-2d-vector-isolated-illustration-visit-professional-health-facility-flat-characters-cartoon-background-getting-treatment-plan-symptoms-conditions-colourful-scene_151150-5797.jpg?w=2000" alt="" />
-     </div>
-        <div className = "authentication bg-blue-400">
-        <div className='authentication-form card p-3'>
-            <h1 className='card-title bg-blue-500'>Welcome Back</h1>
-
-            <Form layout='vertical' onFinish={onFinish}>
-
-                <Form.Item label='Email' name='email'>
-                    <Input placeholder='Email'/>
-                </Form.Item>
-
-                <Form.Item label='Password' name='password'>
-                    <Input placeholder='Password' type='Password'/>
-                </Form.Item>
-
-                <Button className='bg-blue-500 primary-button my-3 full-width-button' htmlType='submit'> LOGIN</Button>
-
-                <Link to='/register' className='anchor mt-2'>Click here to register</Link>
-            </Form>
+      <div
+        className={`${
+          collapsed
+            ? "full-home"
+            : "login-page-image bg-white justify-center items-center pt-10 object-cover "
+        }`}
+      >
+        <div className="flex justify-between pt-10">
+          <div className="title">
+            <h1>Welocome to your Online Appointment System Application</h1>
+          </div>
+          <div>
+            {collapsed ? (
+              <i
+                className="ri-menu-2-fill header-action-icon"
+                onClick={() => setCollapsed(false)}
+              ></i>
+            ) : (
+              <i
+                className=" ri-close-fill header-action-icon"
+                onClick={() => setCollapsed(true)}
+              ></i>
+            )}
+          </div>
         </div>
-    </div>
+        <div >
+          <div className={`${collapsed ? 'collapsed-description' : ''}`}>
+          <img
+            className=""
+            src="https://img.freepik.com/premium-vector/personal-doctor-appointment-2d-vector-isolated-illustration-visit-professional-health-facility-flat-characters-cartoon-background-getting-treatment-plan-symptoms-conditions-colourful-scene_151150-5797.jpg?w=2000"
+            alt=""
+          />
+              
+              {/* <div className="card-description card p-3">
+                
+          </div> */}
 
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`${
+          collapsed ? "collapsed-authentication" : "full-authentication"
+        }`}
+      >
+        <div className="authentication bg-blue-400">
+          <div className="authentication-form card p-3">
+            <h1 className="card-title bg-blue-500">Welcome Back</h1>
+
+            <Form layout="vertical" onFinish={onFinish}>
+              <Form.Item label="Email" name="email">
+                <Input placeholder="Email" />
+              </Form.Item>
+
+              <Form.Item label="Password" name="password">
+                <Input placeholder="Password" type="Password" />
+              </Form.Item>
+
+              <Button
+                className="bg-blue-500 primary-button my-3 full-width-button"
+                htmlType="submit"
+              >
+                {" "}
+                LOGIN
+              </Button>
+
+              <Link to="/register" className="anchor mt-2">
+                Click here to register
+              </Link>
+            </Form>
+          </div>
+        </div>
+      </div>
     </div>
 
     // <div className="login-page  md:flex items-center justify-center h-screen bg-gray-100">
