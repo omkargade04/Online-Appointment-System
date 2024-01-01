@@ -26,10 +26,12 @@ router.get("/get-doctor-info-by-user-id/:userId", authMiddleware, async(req, res
 
 router.post("/get-doctor-info-by-id", authMiddleware, async(req, res) => {
     try{
-       // console.log(_id);
+        console.log(_id);
         const doctor = await Doctor.findOne({_id: req.body.doctorId});
-        // console.log(doctor.firstName);
-        // console.log(doctor.lastName);
+
+        console.log(doctor.firstName);
+        console.log(doctor.lastName);
+
         res.status(200).send({
             success: true,
             message: "Doctor info fetched successfully",
@@ -47,6 +49,9 @@ router.post('/update-doctor-profile', authMiddleware, async(req, res) => {
 
     try{
         const doctor = await Doctor.findOneAndUpdate({userId: req.body.userId}, req.body);
+
+        console.log(doctor);
+
         res.status(200).send({
             success: true,
             message: "Doctor profile updated successfully",
@@ -62,6 +67,7 @@ router.post('/update-doctor-profile', authMiddleware, async(req, res) => {
 router.get("/get-appointments-by-doctor-id", authMiddleware, async(req, res) => {
     try{
         const doctor = await Doctor.findOne({userId: req.body.userId});
+        console.log(doctor);
         const appointments = await Appointment.find({doctorId: doctor._id});
         res.status(200).send({
             message: "Appointments fetched successfully",
@@ -87,6 +93,8 @@ router.post("/change-appointment-status", authMiddleware, async(req, res) => {
 
         const user = await User.findOne({_id: appointment.userId});
 
+        console.log(user);
+
         const unseenNotifications = user.unseenNotifications;
         unseenNotifications.push({
             type: "Appointment-status-changed",
@@ -94,6 +102,8 @@ router.post("/change-appointment-status", authMiddleware, async(req, res) => {
             onClickPath: "/appointments",
         })
         await user.save();
+
+        console.log(unseenNotifications);
 
         res.status(200).send({
             message: "Appointment status changed successfully",

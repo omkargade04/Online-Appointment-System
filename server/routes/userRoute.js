@@ -60,6 +60,9 @@ router.post('/get-user-info-by-id', authMiddleware, async(req, res) => {
 
     try{
         const user = await User.findOne({_id: req.body.userId});
+
+        console.log(user);
+
         user.password = undefined;
         if(!user){
             return res
@@ -91,6 +94,7 @@ router.post("/apply-doctor-account", authMiddleware, async(req, res) => {
             },
             onClickPath: "/admin/doctorslist"
         })
+        console.log(unseenNotifications);
         await User.findByIdAndUpdate(adminUser._id, {unseenNotifications});
         res.status(200).send({
             success: true,
@@ -109,7 +113,9 @@ router.post("/mark-all-notifications-as-seen", authMiddleware, async(req, res) =
         const user = await User.findOne({_id: req.body.userId});
         const unseenNotifications = user.unseenNotifications;
         const seenNotifications = user.seenNotifications;
+        //Marking all notifications as seen 
         seenNotifications.push(...unseenNotifications);
+        //Emptying the notifications 
         user.unseenNotifications = [];
         user.seenNotifications = seenNotifications;
         const updatedUser = await user.save();
@@ -130,6 +136,8 @@ router.post("/mark-all-notifications-as-seen", authMiddleware, async(req, res) =
 router.post("/delete-all-notifications", authMiddleware, async(req, res) => {
     try{
         const user = await User.findOne({_id: req.body.userId});
+        console.log(user);
+        //deleting all user notifications
         user.seenNotifications = [];
         user.unseenNotifications = [];
         const updatedUser = await user.save();
@@ -150,6 +158,7 @@ router.post("/delete-all-notifications", authMiddleware, async(req, res) => {
 router.get("/get-all-approved-doctors", authMiddleware, async(req, res) => {
     try{
         const doctors = await Doctor.find({status: "approved"});
+        console.log(doctors);
         res.status(200).send({
             message: "Doctors fetched successfully",
             success: true,

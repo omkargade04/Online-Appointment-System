@@ -7,6 +7,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 router.get("/get-all-doctors", authMiddleware, async(req, res) => {
     try{
         const doctors = await Doctor.find({});
+        console.log(doctors);
         res.status(200).send({
             message: "Doctors fetched successfully",
             success: true,
@@ -25,6 +26,7 @@ router.get("/get-all-doctors", authMiddleware, async(req, res) => {
 router.get("/get-all-users", authMiddleware, async(req, res) => {
     try{
         const users = await User.find({});
+        console.log(users);
         res.status(200).send({
             message: "Users fetched successfully",
             success: true,
@@ -47,7 +49,11 @@ router.post("/change-doctor-account-status", authMiddleware, async(req, res) => 
             status,
         });
 
+        console.log(doctor);
+
         const user = await User.findOne({_id: doctor.userId});
+
+        console.log(user);
 
         const unseenNotifications = user.unseenNotifications;
         unseenNotifications.push({
