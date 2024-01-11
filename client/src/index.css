@@ -170,6 +170,9 @@ p{
     width: 400px;
 
 }
+.doc-img{
+    z-index: -10;
+}
 .collapsed-description{
     display: flex;
     padding-top: 30px;
@@ -180,7 +183,14 @@ p{
 }
 
 @media screen and (max-width: 768px){
-    .full-home{
-        display: none;
+    .title{
+        width: 100%;
+        color: red;
+    }
+    .mobile-device{
+        width: 0%;
+    }
+    .full-authentication{
+        width: 100%;
     }
 }

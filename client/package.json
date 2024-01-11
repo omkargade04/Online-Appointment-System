@@ -20,6 +20,7 @@
     "react-scripts": "5.0.1",
     "redux": "^5.0.0",
     "redux-toolkit": "^1.1.2",
+    "sooner": "^1.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

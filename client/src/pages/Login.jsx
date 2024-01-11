@@ -35,7 +35,7 @@ function Login() {
   return (
     <div className="login-page flex w-full ">
       <div
-        className={`${
+        className={` mobile-device ${
           collapsed
             ? "full-home"
             : "login-page-image bg-white justify-center items-center pt-10 object-cover "
@@ -61,11 +61,13 @@ function Login() {
         </div>
         <div >
           <div className={`${collapsed ? 'collapsed-description' : ''}`}>
+            <div className=" doc-img">
           <img
-            className=""
+            
             src="https://img.freepik.com/premium-vector/personal-doctor-appointment-2d-vector-isolated-illustration-visit-professional-health-facility-flat-characters-cartoon-background-getting-treatment-plan-symptoms-conditions-colourful-scene_151150-5797.jpg?w=2000"
             alt=""
           />
+          </div>
               
               {/* <div className="card-description card p-3">
                 
